@@ -6,7 +6,7 @@ function PublicFooter() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-bold mb-2">PH Doc</h3>
+            <h3 className="font-bold mb-2">Safar Sathi</h3>
             <p className="text-sm text-muted-foreground">Your health is our priority. We are here to provide the best medical services.</p>
           </div>
           <div>

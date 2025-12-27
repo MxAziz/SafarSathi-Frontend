@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PH-Health-Care",
-  description: "A healthcare application built with Next.js",
+  title: "SafarSathi - Your Travel Buddy",
+  description: "SafarSathi helps you explore the world with confidence. Find travel buddies, exclusive memberships, and more to make your journeys unforgettable.",
 };
 
 export default function RootLayout({
