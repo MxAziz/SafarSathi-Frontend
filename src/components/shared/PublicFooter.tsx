@@ -7,7 +7,7 @@ function PublicFooter() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h3 className="font-bold mb-2">Safar Sathi</h3>
-            <p className="text-sm text-muted-foreground">Your health is our priority. We are here to provide the best medical services.</p>
+            <p className="text-sm text-muted-foreground">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates vitae architecto sed reprehenderit fugit adipisci corrupti! Sequi magnam quasi accusamus sint voluptatem provident iste rerum.</p>
           </div>
           <div>
             <h3 className="font-semibold mb-2">Quick Links</h3>
@@ -31,13 +31,13 @@ function PublicFooter() {
             <h3 className="font-semibold mb-2">Contact Us</h3>
             <p className="text-sm text-muted-foreground">
               123 Medical Lane<br />
-              Health City, HC 12345<br />
-              contact@phdoc.com
+              Tech City, HC 12345<br />
+              contact@safarsathi.com
             </p>
           </div>
         </div>
         <div className="mt-8 border-t pt-4 text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} PH Doc. All Rights Reserved.
+          &copy; {new Date().getFullYear()} SafarSathi. All Rights Reserved.
         </div>
       </div>
     </footer>
