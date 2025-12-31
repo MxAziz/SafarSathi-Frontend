@@ -16,7 +16,7 @@ const PublicNavbar = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur  dark:bg-background/95">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold text-primary">SafarSathi</span>
+          <span className="text-xl font-bold text-primary">🧳 SafarSathi</span>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
@@ -58,7 +58,7 @@ const PublicNavbar = () => {
                 ))}
                 <div className="border-t pt-4 flex flex-col space-y-4">
                   <div className="flex justify-center"></div>
-                  <Link href="/login" className="text-lg font-medium">
+                  <Link href="/login" className="text-lg  font-medium">
                     <Button>Login</Button>
                   </Link>
                 </div>
