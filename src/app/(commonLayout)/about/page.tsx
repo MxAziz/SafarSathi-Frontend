@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image';
-import { Compass, Users, Shield, Award, Heart, Globe, TrendingUp, CheckCircle, Star } from 'lucide-react';
+import { Compass, Users, Shield, Award, Heart } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AboutPage() {
   const stats = [
@@ -35,7 +36,7 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: 'Arif Rahman',
+      name: 'Muhammad Aziz',
       role: 'Founder & CEO',
       image: 'https://i.pinimg.com/1200x/ce/76/b2/ce76b20f89a9a46e372cb6d6b612eb90.jpg'
     },
@@ -45,7 +46,7 @@ export default function AboutPage() {
       image: 'https://i.pinimg.com/736x/d6/bc/8d/d6bc8d404b8a79fbb3f6c2ad53fbc2dd.jpg'
     },
     {
-      name: 'Kamal Hossain',
+      name: 'Naimur Rahman',
       role: 'Travel Director',
       image: 'https://i.pinimg.com/1200x/99/22/e2/9922e27f7cd524dff8eab26d9c874c1f.jpg'
     },
@@ -166,7 +167,7 @@ export default function AboutPage() {
               >
                 <div className="absolute inset-0 bg-linear-to-br from-[#0C54A0] to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-6 text-[#0C54A0] group-hover:text-white transition-colors shadow-lg">
+                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mb-6 text-[#0C54A0] group-hover:text-black group-hover:rotate-6 transition-colors shadow-lg">
                     {value.icon}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-white mb-3 transition-colors">
@@ -254,7 +255,7 @@ export default function AboutPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="relative py-24 bg-linear-to-br from-[#0C54A0] to-[#0a4785] text-white overflow-hidden">
+      <div className="relative max-w-7xl mx-2 md:mx-8 px-4 sm:px-6 lg:px-8 rounded-4xl py-16 mb-20 bg-linear-to-br from-[#0C54A0] to-[#0a4785] text-white overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
@@ -269,12 +270,14 @@ export default function AboutPage() {
             Your next adventure is just a click away!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-white text-[#0C54A0] rounded-xl font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg">
+            <button className="px-8 py-4 bg-white text-[#0C54A0] rounded-xl font-semibold hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg cursor-pointer">
               Explore Destinations
             </button>
-            <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-all transform hover:scale-105">
-              Contact Us
-            </button>
+            <Link href="/contact">
+              <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition-all transform hover:scale-105 cursor-pointer">
+                Contact Us
+              </button>
+            </Link>
           </div>
         </div>
       </div>
