@@ -201,7 +201,7 @@ const PublicNavbar = ({
                 </Link>
                 <Link href="/register">
                   <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-7 shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95 cursor-pointer">
-                    Sign Up
+                    Register
                   </Button>
                 </Link>
               </div>

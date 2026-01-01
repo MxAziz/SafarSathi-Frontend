@@ -1,4 +1,5 @@
 import HeroSection from "@/components/modules/Home/HeroSection";
+import HowItWorksSection from "@/components/modules/Home/howItWorks";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,6 +14,9 @@ export default function HomePage() {
       <main>
         {/* hero section */}
         <HeroSection/>
+
+        {/* how it works section */}
+        <HowItWorksSection />
 
       </main>
     </>
