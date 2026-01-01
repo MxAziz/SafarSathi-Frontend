@@ -108,7 +108,7 @@ export default function MembershipPage() {
       role: 'Elite Member',
       image: 'https://i.pinimg.com/736x/33/d2/a7/33d2a732aa1d3195349ad518526c5f42.jpg',
       content: 'Elite membership transformed how I travel. The concierge service is exceptional and the perks are unmatched.',
-      rating: 5
+      rating: 4
     },
     {
       name: 'Maria Garcia',
@@ -125,20 +125,26 @@ export default function MembershipPage() {
       <div className="relative bg-linear-to-br from-[#0C54A0] via-[#0d5fb8] to-[#0a4785] text-white overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 right-10 w-64 h-64 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-10 left-10 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div
+            className="absolute bottom-10 left-10 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-lg px-4 py-2 rounded-full mb-6">
               <Sparkles className="w-5 h-5 text-yellow-300" />
-              <span className="text-sm font-semibold">Premium Travel Benefits</span>
+              <span className="text-sm font-semibold">
+                Premium Travel Benefits
+              </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Choose Your Travel Membership
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Unlock exclusive benefits, save more, and travel better with SafarSathi Membership
+              Unlock exclusive benefits, save more, and travel better with
+              SafarSathi Membership
             </p>
           </div>
         </div>
@@ -149,21 +155,21 @@ export default function MembershipPage() {
         <div className="flex justify-center">
           <div className="bg-white rounded-full shadow-lg p-2 inline-flex gap-2">
             <button
-              onClick={() => setBillingCycle('monthly')}
+              onClick={() => setBillingCycle("monthly")}
               className={`px-6 py-3 rounded-full font-semibold transition-all ${
-                billingCycle === 'monthly'
-                  ? 'bg-[#0C54A0] text-white'
-                  : 'text-gray-600 hover:text-[#0C54A0]'
+                billingCycle === "monthly"
+                  ? "bg-[#0C54A0] text-white"
+                  : "text-gray-600 hover:text-[#0C54A0]"
               }`}
             >
               Monthly
             </button>
             <button
-              onClick={() => setBillingCycle('yearly')}
+              onClick={() => setBillingCycle("yearly")}
               className={`px-6 py-3 rounded-full font-semibold transition-all relative ${
-                billingCycle === 'yearly'
-                  ? 'bg-[#0C54A0] text-white'
-                  : 'text-gray-600 hover:text-[#0C54A0]'
+                billingCycle === "yearly"
+                  ? "bg-[#0C54A0] text-white"
+                  : "text-gray-600 hover:text-[#0C54A0]"
               }`}
             >
               Yearly
@@ -182,7 +188,7 @@ export default function MembershipPage() {
             <div
               key={index}
               className={`relative bg-white rounded-3xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 ${
-                plan.popular ? 'ring-4 ring-[#0C54A0] md:-mt-4 md:mb-4' : ''
+                plan.popular ? "ring-4 ring-[#0C54A0] md:-mt-4 md:mb-4" : ""
               }`}
             >
               {plan.popular && (
@@ -198,12 +204,17 @@ export default function MembershipPage() {
                   <h3 className="text-2xl font-bold">{plan.name}</h3>
                 </div>
                 <div className="mb-2">
-                  <span className="text-5xl font-bold">৳{plan.price[billingCycle].toLocaleString()}</span>
-                  <span className="text-lg ml-2">/{billingCycle === 'monthly' ? 'mo' : 'yr'}</span>
+                  <span className="text-5xl font-bold">
+                    ৳{plan.price[billingCycle].toLocaleString()}
+                  </span>
+                  <span className="text-lg ml-2">
+                    /{billingCycle === "monthly" ? "mo" : "yr"}
+                  </span>
                 </div>
-                {billingCycle === 'yearly' && (
+                {billingCycle === "yearly" && (
                   <p className="text-sm opacity-90">
-                    ৳{Math.round(plan.price.yearly / 12).toLocaleString()}/month billed annually
+                    ৳{Math.round(plan.price.yearly / 12).toLocaleString()}/month
+                    billed annually
                   </p>
                 )}
               </div>
@@ -223,8 +234,8 @@ export default function MembershipPage() {
                 <button
                   className={`w-full py-4 rounded-xl font-semibold transition-all ${
                     plan.popular
-                      ? 'bg-[#0C54A0] text-white hover:bg-[#094580]'
-                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                      ? "bg-[#0C54A0] text-white hover:bg-[#094580]"
+                      : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                   }`}
                 >
                   Get Started
@@ -243,7 +254,8 @@ export default function MembershipPage() {
               Why Choose SafarSathi Membership?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Every membership comes packed with benefits designed to enhance your travel experience
+              Every membership comes packed with benefits designed to enhance
+              your travel experience
             </p>
           </div>
 
@@ -291,10 +303,15 @@ export default function MembershipPage() {
               >
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 italic">&quot;{testimonial.content}&quot;</p>
+                <p className="text-gray-700 mb-6 italic">
+                  &quot;{testimonial.content}&quot;
+                </p>
                 <div className="flex items-center gap-4">
                   <Image
                     src={testimonial.image}
@@ -304,8 +321,12 @@ export default function MembershipPage() {
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-500">{testimonial.role}</div>
+                    <div className="font-semibold text-gray-900">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      {testimonial.role}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -323,21 +344,21 @@ export default function MembershipPage() {
           <div className="space-y-6">
             {[
               {
-                q: 'Can I upgrade or downgrade my membership?',
-                a: 'Yes! You can change your membership tier at any time. Upgrades take effect immediately, while downgrades apply at the next billing cycle.'
+                q: "Can I upgrade or downgrade my membership?",
+                a: "Yes! You can change your membership tier at any time. Upgrades take effect immediately, while downgrades apply at the next billing cycle.",
               },
               {
-                q: 'Is there a refund policy?',
-                a: 'We offer a 30-day money-back guarantee. If you\'re not satisfied with your membership, contact us within 30 days for a full refund.'
+                q: "Is there a refund policy?",
+                a: "We offer a 30-day money-back guarantee. If you're not satisfied with your membership, contact us within 30 days for a full refund.",
               },
               {
-                q: 'Can I share my membership benefits?',
-                a: 'Adventurer members get 10% companion discount, while Elite members can add up to 3 family members to their plan at no extra cost.'
+                q: "Can I share my membership benefits?",
+                a: "Adventurer members get 10% companion discount, while Elite members can add up to 3 family members to their plan at no extra cost.",
               },
               {
-                q: 'How do I cancel my membership?',
-                a: 'You can cancel anytime from your account settings. Your benefits will remain active until the end of your billing period.'
-              }
+                q: "How do I cancel my membership?",
+                a: "You can cancel anytime from your account settings. Your benefits will remain active until the end of your billing period.",
+              },
             ].map((faq, index) => (
               <details
                 key={index}
@@ -347,9 +368,7 @@ export default function MembershipPage() {
                   {faq.q}
                   <span className="ml-4 shrink-0 text-[#0C54A0]">+</span>
                 </summary>
-                <p className="mt-4 text-gray-600 leading-relaxed">
-                  {faq.a}
-                </p>
+                <p className="mt-4 text-gray-600 leading-relaxed">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -358,9 +377,10 @@ export default function MembershipPage() {
 
       {/* CTA Section */}
       <div className="relative max-w-7xl mx-2 md:mx-8 px-4 sm:px-6 lg:px-8 rounded-4xl py-16 mb-20 bg-linear-to-br from-[#0C54A0] to-[#0a4785] text-white overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
         </div>
 
         <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
