@@ -1,18 +1,18 @@
-import Head from "next/head";
+import HeroSection from "@/components/modules/Home/HeroSection";
+import { Metadata } from "next";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "SafarSathi | Find Your Perfect Travel Buddy & Explore the World",
+  description:
+    "Connect with compatible travelers, plan meetups, and turn solo trips into shared adventures. Join SafarSathi - the secure platform for finding travel companions globally.",
+};
+
+export default function HomePage() {
   return (
     <>
-      <Head>
-        <title>AI-Powered Healthcare - Find Your Perfect Doctor</title>
-        <meta
-          name="description"
-          content="Discover top-rated doctors tailored to your needs with our AI-powered healthcare platform. Get personalized recommendations and book appointments effortlessly."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main>
+        {/* hero section */}
+        <HeroSection/>
 
       </main>
     </>
