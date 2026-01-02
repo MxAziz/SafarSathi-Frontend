@@ -2,6 +2,7 @@ import HeroSection from "@/components/modules/Home/HeroSection";
 import HowItWorksSection from "@/components/modules/Home/howItWorks";
 import JoinCommunitySection from "@/components/modules/Home/JoinCommunity";
 import PopularDestinationsSection from "@/components/modules/Home/PopularDestinations";
+import SponsorsSection from "@/components/modules/Home/Sponsors";
 import TestimonialsSection from "@/components/modules/Home/Testimonials";
 import WhyChooseUsSection from "@/components/modules/Home/WhyChooseUs";
 import { Metadata } from "next";
@@ -33,6 +34,9 @@ export default function HomePage() {
 
         {/* top rated travelers section */}
         <JoinCommunitySection />
+
+        {/* sponsors section */}
+        <SponsorsSection />
 
       </main>
     </>

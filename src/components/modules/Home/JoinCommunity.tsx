@@ -66,7 +66,7 @@ export default function JoinCommunitySection() {
 
             <div className="text-center">
               <Link href="/register">
-                <button className="px-8 py-4 bg-white text-[#0C54A0] rounded-xl font-semibold hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+                <button className="px-8 py-4 bg-white text-[#0C54A0] rounded-xl font-semibold hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer">
                   Join Our Community
                 </button>
               </Link>
