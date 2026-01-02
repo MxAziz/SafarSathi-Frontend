@@ -4,29 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import {
-  Menu,
-  X,
-  User,
-  LogOut,
-  Map,
-  Calendar,
-  Settings,
-  ChevronDown,
-  Compass,
-} from "lucide-react";
+import { Menu, X, User, LogOut, Map, Calendar, Settings, ChevronDown, Compass, } from "lucide-react";
 import { Button } from "@/components/ui/button";
 // import { Logo } from "./Logo";
 import { IUserInfo } from "@/types/user.interface";
-// import { logoutUser } from "@/services/auth/logoutUser";
+import { logoutUser } from "@/services/auth/logoutUser";
 
-const PublicNavbar = ({
-  accessToken,
-  authData,
-}: {
-  accessToken: string;
-  authData: IUserInfo;
-}) => {
+const PublicNavbar = ({ accessToken, authData, }: { accessToken: string; authData: IUserInfo; }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -42,7 +26,7 @@ const PublicNavbar = ({
   }, []);
 
   const handleLogout = async () => {
-    // await logoutUser();
+    await logoutUser();
   };
 
   const navLinks = [
