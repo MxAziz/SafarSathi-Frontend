@@ -376,14 +376,14 @@ export default function MembershipPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="relative max-w-7xl mx-2 md:mx-8 px-4 sm:px-6 lg:px-8 rounded-4xl py-16 mb-20 bg-linear-to-br from-[#0C54A0] to-[#0a4785] text-white overflow-hidden">
+      <div className="relative max-w-6xl mx-auto rounded-4xl py-16 mb-20 bg-linear-to-br from-[#0C54A0] to-[#0a4785] text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
         </div>
 
-        <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-4xl mx-auto text-center ">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Elevate Your Travel?
           </h2>
