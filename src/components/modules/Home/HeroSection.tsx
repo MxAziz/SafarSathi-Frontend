@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Search, MapPin, Calendar, Users, ArrowRight, Sparkles } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -138,7 +139,7 @@ export default function HeroSection() {
                   <select
                     value={searchData.travelers}
                     onChange={(e) => setSearchData({ ...searchData, travelers: e.target.value })}
-                    className="w-full pl-12 pr-4 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0C54A0] text-gray-900 appearance-none"
+                    className="w-full pl-12 pr-4 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0C54A0] text-gray-900 appearance-none cursor-pointer"
                   >
                     {[1, 2, 3, 4, 5, 6].map(num => (
                       <option key={num} value={num}>{num} {num === 1 ? 'Person' : 'People'}</option>
@@ -150,7 +151,7 @@ export default function HeroSection() {
                 <div className="md:col-span-2">
                   <button
                     onClick={handleSearch}
-                    className="w-full h-full bg-[#0C54A0] hover:bg-[#094580] text-white font-semibold rounded-xl transition-all flex items-center justify-center gap-2 group"
+                    className="w-full h-full bg-[#0C54A0] hover:bg-[#094580] text-white font-semibold rounded-xl transition-all flex items-center justify-center gap-2 group cursor-pointer"
                   >
                     <Search className="w-5 h-5" />
                     <span className="hidden md:inline">Search</span>
@@ -176,13 +177,17 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up animation-delay-600">
-            <button className="group px-8 py-4 bg-[#0C54A0] hover:bg-[#094580] text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2">
+            <Link href="/travel-plans">
+            <button className="group px-8 py-4 bg-[#0C54A0] hover:bg-[#094580] text-white font-semibold rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2 cursor-pointer">
               Find Travel Buddies
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-4 bg-white/10 backdrop-blur-lg border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all">
-              How It Works
+            </Link>
+            <Link href="/explore-travelers">
+            <button className="px-8 py-4 bg-white/10 backdrop-blur-lg border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all cursor-pointer">
+              Explore Travelers
             </button>
+            </Link>
           </div>
         </div>
 
