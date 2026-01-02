@@ -1,6 +1,7 @@
 import HeroSection from "@/components/modules/Home/HeroSection";
 import HowItWorksSection from "@/components/modules/Home/howItWorks";
 import PopularDestinationsSection from "@/components/modules/Home/PopularDestinations";
+import TestimonialsSection from "@/components/modules/Home/Testimonials";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,6 +22,9 @@ export default function HomePage() {
 
         {/* how it works section */}
         <HowItWorksSection />
+
+        {/* testimonials section */}
+        <TestimonialsSection />
 
       </main>
     </>
