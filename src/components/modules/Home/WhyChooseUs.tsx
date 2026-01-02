@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Shield, Zap, Users, Award, Heart, Globe, CheckCircle, Sparkles, Lock, MessageCircle, Calendar } from 'lucide-react';
 
 export default function WhyChooseUsSection() {
-  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
+  const [, setHoveredFeature] = useState<number | null>(null);
 
   const mainFeatures = [
     {

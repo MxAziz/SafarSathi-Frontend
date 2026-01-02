@@ -1,5 +1,6 @@
 import HeroSection from "@/components/modules/Home/HeroSection";
 import HowItWorksSection from "@/components/modules/Home/howItWorks";
+import JoinCommunitySection from "@/components/modules/Home/JoinCommunity";
 import PopularDestinationsSection from "@/components/modules/Home/PopularDestinations";
 import TestimonialsSection from "@/components/modules/Home/Testimonials";
 import WhyChooseUsSection from "@/components/modules/Home/WhyChooseUs";
@@ -29,6 +30,9 @@ export default function HomePage() {
 
         {/* why choose us section */}
         <WhyChooseUsSection />
+
+        {/* top rated travelers section */}
+        <JoinCommunitySection />
 
       </main>
     </>
