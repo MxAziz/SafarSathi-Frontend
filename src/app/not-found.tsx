@@ -1,67 +1,61 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { AlertCircle, ArrowLeft, Home } from "lucide-react";
+'use client'
 import Link from "next/link";
+import { ArrowLeft, Compass } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const NotFound = () => {
-  const router = useRouter();
+export default function NotFound() {
+  const Router = useRouter();
+
   return (
-    <>
-      <div className="flex min-h-screen items-center justify-center bg-linear-to-b from-background to-muted/20">
-        <div className="container flex flex-col items-center justify-center gap-8 px-4 text-center">
-          <div className="scale-in">
-            <div className="relative">
-              {/* Animated Circle */}
-              <div className="absolute inset-0 rounded-full bg-destructive/10 pulse-scale" />
+    <section className="relative flex min-h-screen items-center justify-center bg-linear-to-br from-[#0C54A0]/10 via-white to-[#0C54A0]/5 px-6">
+      {/* Decorative Background */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-[#0C54A0]/20 blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-[#0C54A0]/10 blur-3xl" />
+      </div>
 
-              {/* 404 Text */}
-              <div className="relative z-10 flex h-48 w-48 items-center justify-center">
-                <h1 className="text-8xl font-bold text-primary fade-up-delay-1">
-                  404
-                </h1>
-              </div>
+      {/* Content */}
+      <div className="relative z-10 max-w-xl text-center">
+        {/* Icon */}
+        <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-[#0C54A0]/10 text-[#0C54A0] shadow-sm">
+          <Compass size={40} />
+        </div>
 
-              {/* Floating Icon */}
-              <div className="absolute -top-4 -right-4 rounded-full bg-destructive p-3 text-destructive-foreground shadow-lg float-icon">
-                <AlertCircle className="h-8 w-8" />
-              </div>
-            </div>
-          </div>{" "}
-          <div className="space-y-4 fade-up-delay-2">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Page Not Found
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-md">
-              Oops! The page you&apos;re looking for doesn&apos;t exist. It
-              might have been moved or deleted.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 fade-up-delay-3">
-            <Button
-              size="lg"
-              onClick={() => router.back()}
-              variant="outline"
-              className="gap-2"
+        {/* 404 */}
+        <h1 className="text-7xl font-extrabold tracking-tight text-[#0C54A0]">
+          404
+        </h1>
+
+        {/* Title */}
+        <h2 className="mt-4 text-2xl font-semibold text-gray-900">
+          পথটা হারিয়ে ফেলেছো!
+        </h2>
+
+        {/* Description */}
+        <p className="mt-3 text-gray-600 leading-relaxed">
+          তুমি যে পেজটা খুঁজছো সেটা হয়তো সরানো হয়েছে, নাম পরিবর্তন হয়েছে, অথবা
+          এখনো SafarSathi-তে যোগ করা হয়নি।
+        </p>
+
+        {/* Actions */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#0C54A0] px-6 py-3 text-sm font-medium text-white shadow-md transition hover:bg-[#0a4785] focus:outline-none focus:ring-2 focus:ring-[#0C54A0]/40"
+          >
+            <ArrowLeft size={18} />
+            Back to Home
+          </Link>
+
+            <button
+              onClick={() => Router.back()}
+              className="justify-center cursor-pointer inline-flex items-center gap-2 rounded-xl border border-[#0C54A0]/30 bg-white px-6 py-3 text-sm font-medium text-[#0C54A0] shadow-sm transition hover:bg-[#0C54A0]/5 focus:outline-none focus:ring-2 focus:ring-[#0C54A0]/30"
             >
               <ArrowLeft className="h-4 w-4" />
               Go Back
-            </Button>
-            <Button size="lg" asChild className="gap-2">
-              <Link href="/">
-                <Home className="h-4 w-4" />
-                Back to Home
-              </Link>
-            </Button>
-          </div>
-          {/* Decorative Elements */}
-          <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-primary/5 blur-3xl glow-1" />
-          <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl glow-2" />
+            </button>
         </div>
       </div>
-    </>
+    </section>
   );
-};
-
-export default NotFound;
+}
