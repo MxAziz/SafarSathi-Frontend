@@ -1,5 +1,6 @@
 import HeroSection from "@/components/modules/Home/HeroSection";
 import HowItWorksSection from "@/components/modules/Home/howItWorks";
+import PopularDestinationsSection from "@/components/modules/Home/PopularDestinations";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +14,10 @@ export default function HomePage() {
     <>
       <main>
         {/* hero section */}
-        <HeroSection/>
+        <HeroSection />
+
+        {/* Popular Destinations Section */}
+        <PopularDestinationsSection />
 
         {/* how it works section */}
         <HowItWorksSection />
