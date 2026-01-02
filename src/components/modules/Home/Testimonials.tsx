@@ -266,7 +266,27 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-
+        {/* Stats Section */}
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+          {[
+            { number: '10K+', label: 'Success Stories', icon: <Heart className="w-6 h-6" /> },
+            { number: '4.9/5', label: 'Average Rating', icon: <Star className="w-6 h-6" /> },
+            { number: '95%', label: 'Match Success', icon: <Users className="w-6 h-6" /> },
+            { number: '50K+', label: 'Happy Travelers', icon: <MapPin className="w-6 h-6" /> }
+          ].map((stat, index) => (
+            <div
+              key={index}
+              className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 text-center hover:bg-white/15 transition-all transform hover:scale-105"
+            >
+              <div className="flex justify-center mb-3 text-[#0C54A0]">
+                {stat.icon}
+              </div>
+              <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
+              <div className="text-blue-200 text-sm">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <style jsx>{`
         @keyframes blob {
