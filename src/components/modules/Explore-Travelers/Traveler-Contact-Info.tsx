@@ -6,6 +6,18 @@ import { format } from "date-fns";
 import { ITraveler } from "@/types/traveler.interface";
 
 export function TravelerContactInfo({ traveler }: { traveler: ITraveler }) {
+  function safeFormatDate(
+  dateValue: string | Date | undefined | null,
+  formatStr: string
+) {
+  if (!dateValue) return "N/A";
+
+  const date = new Date(dateValue);
+  if (isNaN(date.getTime())) return "N/A";
+
+  return format(date, formatStr);
+}
+
   return (
     <Card className="h-full shadow-none border-none">
       <CardHeader>
@@ -53,7 +65,7 @@ export function TravelerContactInfo({ traveler }: { traveler: ITraveler }) {
           <div>
             <p className="text-xs text-muted-foreground">Joined</p>
             <p className="font-medium">
-              {format(new Date(traveler?.createdAt), "MMMM yyyy")}
+              {safeFormatDate(traveler?.createdAt, "MMMM yyyy")}
             </p>
           </div>
         </div>

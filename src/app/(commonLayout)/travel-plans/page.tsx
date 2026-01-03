@@ -26,31 +26,44 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const plan = await getTravelPlanById(id);
   if (!plan) {
     return {
-      title: "Trip Not Found | GoPal",
+      title: "Trip Not Found | SafarSathi",
       description: "The travel plan you are looking for does not exist.",
     };
   }
 
-  const tripDate = format(new Date(plan.startDate), "MMMM d, yyyy");
+  const tripDate = safeFormatDate(plan.startDate, "MMMM d, yyyy");
 
   return {
-    title: `${plan.title} - Trip to ${plan.destination} | GoPal`,
+    title: `${plan.title} - Trip to ${plan.destination} | SafarSathi`,
     description: `Join this ${plan.travelType} trip to ${plan.destination} starting on ${tripDate}. Budget: ${plan.budgetRange}. Organized by ${plan.traveler?.name}.`,
-    keywords: [
-      plan.destination,
-      "Travel Plan",
-      plan.travelType,
-      "Group Trip",
-      "GoPal Travel",
-      "Trip Itinerary",
-    ],
   };
 }
 
+function safeFormatDate(
+  dateValue: string | Date | undefined | null,
+  formatStr: string
+) {
+  if (!dateValue) return "N/A";
+
+  const date = new Date(dateValue);
+  if (isNaN(date.getTime())) return "N/A";
+
+  return format(date, formatStr);
+}
+
 // Helper for duration calculation
+// function getDays(start: string, end: string) {
+//   const s = new Date(start);
+//   const e = new Date(end);
+//   const diffTime = Math.abs(e.getTime() - s.getTime());
+//   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+// }
 function getDays(start: string, end: string) {
   const s = new Date(start);
   const e = new Date(end);
+
+  if (isNaN(s.getTime()) || isNaN(e.getTime())) return 0;
+
   const diffTime = Math.abs(e.getTime() - s.getTime());
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
@@ -71,12 +84,10 @@ export default async function TravelPlanDetailsPage({
 
   const reviews = reviewsResult?.data || [];
 
-  // const isOwner = currentUser?.id === plan.travelerId;
-  // const isOwner = false; // আপাতত false
 
   const heroImage =
     plan?.imageUrl ||
-    `https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop`;
+    `https://i.pinimg.com/1200x/18/be/1f/18be1f7af1db345172b4096613fef6a2.jpg`;
 
   return (
     <div className="min-h-screen bg-white dark:bg-black pb-20">
@@ -134,7 +145,8 @@ export default async function TravelPlanDetailsPage({
                     <Users className="w-6 h-6 mx-auto mb-2 text-primary" />
                     <div className="text-sm text-muted-foreground">Type</div>
                     <div className="font-bold capitalize">
-                      {plan.travelType.toLowerCase()}
+                      {/* {plan.travelType.toLowerCase()} */}
+                      {plan.travelType}
                     </div>
                   </div>
                   <div className="p-4 bg-zinc-50 dark:bg-zinc-900 rounded-lg text-center">
@@ -146,7 +158,8 @@ export default async function TravelPlanDetailsPage({
                     <Calendar className="w-6 h-6 mx-auto mb-2 text-primary" />
                     <div className="text-sm text-muted-foreground">Start</div>
                     <div className="font-bold">
-                      {format(new Date(plan?.startDate), "MMM d")}
+                      {/* {format(new Date(plan?.startDate), "MMM d")} */}
+                      {safeFormatDate(plan?.startDate, "MMM d")}
                     </div>
                   </div>
                 </div>
@@ -191,7 +204,7 @@ export default async function TravelPlanDetailsPage({
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <h3 className="text-xl font-bold">{plan.traveler.name}</h3>
+                  <h3 className="text-xl font-bold">{plan?.traveler?.name}</h3>
                   <div className="flex items-center text-sm text-muted-foreground gap-2 mt-1">
                     <span>Host & Organizer</span>
                     <span className="w-1 h-1 rounded-full bg-zinc-400"></span>
@@ -208,7 +221,7 @@ export default async function TravelPlanDetailsPage({
               </div>
               <CardContent className="p-6">
                 <h4 className="font-semibold mb-2">
-                  Why travel with {plan.traveler.name.split(" ")[0]}?
+                  Why travel with {plan?.traveler?.name.split(" ")[0]}?
                 </h4>
                 <p className="text-muted-foreground text-sm">
                   &quot;I love exploring new cultures and meeting people. I
@@ -248,7 +261,8 @@ export default async function TravelPlanDetailsPage({
                         <Calendar className="w-4 h-4" /> Start Date
                       </span>
                       <span className="font-medium">
-                        {format(new Date(plan.startDate), "PPP")}
+                        {/* {format(new Date(plan.startDate), "PPP")} */}
+                        {safeFormatDate(plan?.startDate, "PPP")}
                       </span>
                     </div>
                     <Separator />
@@ -257,7 +271,7 @@ export default async function TravelPlanDetailsPage({
                         <Calendar className="w-4 h-4" /> End Date
                       </span>
                       <span className="font-medium">
-                        {format(new Date(plan.endDate), "PPP")}
+                        {safeFormatDate(plan?.endDate, "PPP")}
                       </span>
                     </div>
                     <Separator />
