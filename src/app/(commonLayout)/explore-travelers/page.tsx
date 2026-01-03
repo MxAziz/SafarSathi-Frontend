@@ -1,23 +1,23 @@
 import TravelerGrid from "@/components/modules/Explore-Travelers/TravelerGrid";
-// import Pagination from "@/components/shared/Pagination";
-// import SearchFilter from "@/components/shared/SearchFilter";
-// import SelectFilter from "@/components/shared/SelectFilter";
+import Pagination from "@/components/shared/Pagination";
+import SearchFilter from "@/components/shared/SearchFilter";
+import SelectFilter from "@/components/shared/SelectFilter";
 import { getAllTravelers } from "@/services/traveler/traveler.service";
 import { IMeta, ITraveler } from "@/types/traveler.interface";
 import { SearchX, SlidersHorizontal } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Explore Travelers | Find Your Perfect Trip Companion - GoPal",
+  title: "Explore Travelers | Find Your Perfect Trip Companion - SafarSathi",
   description:
-    "Connect with travelers worldwide on GoPal. Browse profiles, filter by interests and location, and find your perfect travel buddy for your next adventure.",
+    "Connect with travelers worldwide on SafarSathi. Browse profiles, filter by interests and location, and find your perfect travel buddy for your next adventure.",
   keywords: [
     "Explore Travelers",
     "Find Travel Buddy",
     "Traveler Search",
     "Backpacker Community",
     "Travel Partner",
-    "GoPal Community",
+    "SafarSathi Community",
     "Trip Companion",
     "Global Travelers",
   ],
