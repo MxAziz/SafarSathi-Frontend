@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 import { deleteCookies, getCookies } from "./services/auth/tokenHandler";
-import {
-  getDefaultDashboardRoutes,
-  getRouteOwner,
-  isAuthRoutes,
-  UserRole,
-} from "./utility/auth-utils";
+import { getDefaultDashboardRoutes, getRouteOwner, isAuthRoutes, UserRole, } from "./utility/auth-utils";
 import { JwtPayload } from "jsonwebtoken";
 import jwt from "jsonwebtoken";
 
