@@ -4,13 +4,9 @@ import { getAllTravelers } from "@/services/traveler/traveler.service";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Manage Users | Admin Dashboard - GoPal",
+  title: "Manage Users | Admin Dashboard - SafarSathi",
   description:
-    "Administrator view for managing registered travelers. Search, filter, and update user accounts, verify profiles, and manage active users on GoPal.",
-  robots: {
-    index: false,
-    follow: false,
-  },
+    "Administrator view for managing registered travelers. Search, filter, and update user accounts, verify profiles, and manage active users on SafarSathi.",
 };
 
 type SearchParams = {
@@ -58,7 +54,7 @@ const ManageUsersPage = async ({ searchParams }: SearchParams) => {
       {/* Main Table Component */}
       <UsersTable users={travelers || []} />
 
-      {/* Pagination - Only show if data exists */}
+      {/* Pagination */}
       {travelers && travelers.length > 0 && (
         <div className="flex justify-end mt-4">
           <Pagination
