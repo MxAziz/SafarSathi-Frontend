@@ -117,6 +117,7 @@ export function AppSidebar({ authData, ...props }: AppSidebarProps) {
           {/* <Logo variant="full" /> */}
           <h1>SafarSathi</h1>
         </Link>
+        <div className="border bg-black"></div>
       </SidebarHeader>
       <SidebarContent className="mt-3">
         <NavMain items={data.navMain} />
