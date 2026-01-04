@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-
 import TravelerCard from "./TravelerCard";
 import TravelerDetailsModal from "./TravelerDetailsModal";
 import { ITraveler } from "@/types/traveler.interface";
