@@ -89,15 +89,15 @@ export function NavUser({
               <Link href="/my-profile">
                 <DropdownMenuItem className="cursor-pointer">
                   <User className="mr-2 size-4" />
-                  Account
+                  Profile
                 </DropdownMenuItem>
               </Link>
-              <Link href="#">
+              {/* <Link href="#">
                 <DropdownMenuItem className="cursor-pointer">
                   <LockKeyhole className="mr-2 size-4" />
                   Change Password
                 </DropdownMenuItem>
-              </Link>
+              </Link> */}
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
 
