@@ -177,7 +177,7 @@ export default async function AdminDashboard() {
           <CardContent>
             <ScrollArea className="h-[300px] w-full pr-4">
               <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
-                {recentActivity.map((activity: any, i: number) => (
+                {recentActivity.map((activity: any, ) => (
                   <div
                     key={activity.id}
                     className="flex items-center p-3 rounded-lg border bg-card hover:bg-accent/50 transition-colors group"
