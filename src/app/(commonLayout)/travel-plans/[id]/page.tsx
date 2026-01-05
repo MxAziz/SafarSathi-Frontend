@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const plan = await getTravelPlanById(id);
   if (!plan) {
     return {
-      title: "Trip Not Found | GoPal",
+      title: "Trip Not Found | SafarSathi",
       description: "The travel plan you are looking for does not exist.",
     };
   }
@@ -42,16 +42,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const tripDate = format(new Date(plan.startDate), "MMMM d, yyyy");
 
   return {
-    title: `${plan.title} - Trip to ${plan.destination} | GoPal`,
+    title: `${plan.title} - Trip to ${plan.destination} | SafarSathi`,
     description: `Join this ${plan.travelType} trip to ${plan.destination} starting on ${tripDate}. Budget: ${plan.budgetRange}. Organized by ${plan.traveler?.name}.`,
-    keywords: [
-      plan.destination,
-      "Travel Plan",
-      plan.travelType,
-      "Group Trip",
-      "GoPal Travel",
-      "Trip Itinerary",
-    ],
   };
 }
 
@@ -63,11 +55,7 @@ function getDays(start: string, end: string) {
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
 
-export default async function TravelPlanDetailsPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function TravelPlanDetailsPage({ params, }: { params: { id: string }; }) {
   const { id } = await params;
   const { data: user } = await getUserInfo();
   const [plan, reviewsResult] = await Promise.all([
@@ -80,11 +68,11 @@ export default async function TravelPlanDetailsPage({
   const reviews = reviewsResult?.data || [];
 
   // const isOwner = currentUser?.id === plan.travelerId;
-  // const isOwner = false; // আপাতত false
+  // const isOwner = false;
 
   const heroImage =
     plan?.imageUrl ||
-    `https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop`;
+    `https://i.pinimg.com/736x/a9/80/79/a98079f8349219b9dd3784442b88fddb.jpg`;
 
   return (
     <div className="min-h-screen bg-white dark:bg-black pb-20">
@@ -187,7 +175,7 @@ export default async function TravelPlanDetailsPage({
               </CardContent>
             </Card>
 
-            {/* ✅ Reviews Section Added Here */}
+            {/* Reviews Section Added Here */}
             <ReviewSection planId={id} reviews={reviews} user={user} />
 
             {/* Host Profile Summary */}
