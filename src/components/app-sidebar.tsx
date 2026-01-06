@@ -3,24 +3,9 @@
 import * as React from "react";
 import { NavMain } from "@/components/nav-main";
 import { NavUser } from "@/components/nav-user";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-} from "@/components/ui/sidebar";
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, } from "@/components/ui/sidebar";
 import { IUserInfo } from "@/types/user.interface";
-import {
-  LayoutDashboard,
-  Map,
-  Plane,
-  Users,
-  ShieldCheck,
-  Sparkles,
-  Send,
-  UserPlus,
-  Star,
-} from "lucide-react";
+import { LayoutDashboard, Map, Plane, Users, ShieldCheck, Sparkles, Send, UserPlus, Star, } from "lucide-react";
 import Link from "next/link";
 // import { Logo } from "./shared/Logo";
 
@@ -113,9 +98,10 @@ export function AppSidebar({ authData, ...props }: AppSidebarProps) {
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
-        <Link href="/" className="transition-opacity hover:opacity-90">
+        <Link href="/" className="flex gap-2 justify-start items-center transition-opacity hover:opacity-90">
           {/* <Logo variant="full" /> */}
-          <h1>SafarSathi</h1>
+          <Plane />
+          <h1 className="text-xl font-bold">SafarSathi</h1>
         </Link>
         <div className="border bg-black"></div>
       </SidebarHeader>
