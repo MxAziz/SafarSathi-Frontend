@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Check, Star, Crown, Sparkles, Gift, Plane, Zap, Users, Heart, Award, TrendingUp, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
+import PricingSwitch from '@/components/modules/membership/PricingSwitch';
 
 export default function MembershipPage() {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('yearly');
@@ -244,6 +245,11 @@ export default function MembershipPage() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Pricing Switch */}
+      <div className="container mx-auto mt-20 px-4">
+        <PricingSwitch />
       </div>
 
       {/* Benefits Section */}
