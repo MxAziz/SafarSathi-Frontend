@@ -4,34 +4,15 @@ import { useActionState, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { toast } from "sonner";
-import {
-  Loader2,
-  Mail,
-  Lock,
-  Eye,
-  EyeOff,
-  ArrowRight,
-  ShieldCheck,
-  UserCheck,
-} from "lucide-react";
-
-// UI Components
+import { Loader2, Mail, Lock, Eye, EyeOff, ArrowRight, ShieldCheck, UserCheck, } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, } from "@/components/ui/card";
 // Logic / Utilities
 import { loginUser } from "@/services/auth/loginUser";
 import { getInputFieldError } from "@/utility/getInputFieldError";
-// import { Logo } from "@/components/shared/Logo";
+import Logo from "@/assets/logo/Logo";
 
 const LoginForm = ({ redirect }: { redirect?: string }) => {
   // Server Action Hook
@@ -75,9 +56,10 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
       <Card className="border-none border-border/50 shadow-none bg-card/50 backdrop-blur-xl overflow-hidden rounded-lg">
         {/* Top Accent Gradient Line */}
         <div className="flex justify-center -mb-2">
+          {/* Base Logo */}
           <Link href="/" className="block">
-            {/* <Logo variant="full" /> */}
             SafarSathi
+            <Logo />
           </Link>
         </div>
         <CardHeader className="flex flex-col items-center text-center">
@@ -98,7 +80,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
             <div className="grid grid-cols-2 gap-3">
               <button
                 type="button"
-                onClick={() => handleDemoLogin("admin@gmail.com", "Admin123@")}
+                onClick={() => handleDemoLogin("safaradmin@gmail.com", "admin@0000")}
                 className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-all group"
               >
                 <ShieldCheck size={16} className="text-primary" />
@@ -109,7 +91,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
               <button
                 type="button"
                 onClick={() =>
-                  handleDemoLogin("developermukit@gmail.com", "User123@")
+                  handleDemoLogin("abc@mailinator.com", "Pa$$w0rd!")
                 }
                 className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-all group"
               >

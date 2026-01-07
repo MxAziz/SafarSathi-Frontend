@@ -93,7 +93,7 @@ export async function updateProfile(formData: FormData) {
 export async function softDeleteUser(travelerId: string) {
   try {
     const response = await serverFetch.delete(
-      `/users/soft-delete/${travelerId}`,
+      `/users/delete-traveler/${travelerId}`,
       {
         headers: {
           "Content-Type": "application/json",
