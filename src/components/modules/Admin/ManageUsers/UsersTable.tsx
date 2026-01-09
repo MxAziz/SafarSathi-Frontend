@@ -1,22 +1,8 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, } from "@/components/ui/table";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  ShieldCheck,
-  Mail,
-  UserX,
-  CheckCircle2,
-  AlertCircle,
-  Ban,
-} from "lucide-react";
+import { ShieldCheck, Mail, UserX, CheckCircle2, AlertCircle, Ban, } from "lucide-react";
 import BlurFade from "@/components/magicui/blur-fade";
 import DeleteUserModal from "./DeleteUserDialog";
 

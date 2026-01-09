@@ -4,21 +4,10 @@ import { useActionState, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { toast } from "sonner";
-import {
-  Loader2,
-  Mail,
-  Lock,
-  User,
-  Eye,
-  EyeOff,
-  ArrowRight,
-} from "lucide-react";
-
+import { Loader2, Mail, Lock, User, Eye, EyeOff, ArrowRight, Plane, } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-// import { Logo } from "@/components/shared/Logo";
 import { getInputFieldError } from "@/utility/getInputFieldError";
 import { registerTraveler } from "@/services/auth/registerTraveler";
 
@@ -55,11 +44,9 @@ const RegisterForm = () => {
       className="w-full max-w-md"
     >
       <div className="mb-6 text-center md:text-left">
-        <Link href="/">
-          {/* <Logo
-            variant="full"
-            className="justify-center md:justify-start mb-2"
-          /> */}
+        <Link href="/" className="flex items-center justify-center md:justify-start gap-2 mb-4">
+          <Plane className="h-8 w-8 text-primary" />
+          <h1 className="text-xl font-bold"><span className="text-primary ">Safar</span>Sathi</h1>
         </Link>
         <h2 className="text-2xl font-bold tracking-tight text-foreground">
           Create an account

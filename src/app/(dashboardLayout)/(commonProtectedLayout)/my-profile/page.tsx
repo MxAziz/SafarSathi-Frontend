@@ -29,6 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function ProfilePage() {
   const { data: profile } = await getUserInfo();
+    console.log("profile metadata", profile);
   const role = profile?.user?.role;
   const isTraveler = role === "TRAVELER";
 
@@ -195,6 +196,7 @@ export default async function ProfilePage() {
                   }
                   className="bg-yellow-50 text-yellow-700"
                 />
+                {/* check */}
                 <BigStatCard
                   label="Membership"
                   value={profile?.subscriptionEndDate ? "Pro" : "Free"}

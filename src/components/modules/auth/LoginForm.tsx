@@ -4,15 +4,13 @@ import { useActionState, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { toast } from "sonner";
-import { Loader2, Mail, Lock, Eye, EyeOff, ArrowRight, ShieldCheck, UserCheck, } from "lucide-react";
+import { Loader2, Mail, Lock, Eye, EyeOff, ArrowRight, Plane, } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, } from "@/components/ui/card";
-// Logic / Utilities
 import { loginUser } from "@/services/auth/loginUser";
 import { getInputFieldError } from "@/utility/getInputFieldError";
-import Logo from "@/assets/logo/Logo";
 
 const LoginForm = ({ redirect }: { redirect?: string }) => {
   // Server Action Hook
@@ -31,10 +29,10 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
   }, [state]);
 
   // Handle Demo Login Click
-  const handleDemoLogin = (demoEmail: string, demoPass: string) => {
-    setEmail(demoEmail);
-    setPassword(demoPass);
-  };
+  // const handleDemoLogin = (demoEmail: string, demoPass: string) => {
+  //   setEmail(demoEmail);
+  //   setPassword(demoPass);
+  // };
 
   // Animation Variants
   const containerVariants: Variants = {
@@ -56,10 +54,9 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
       <Card className="border-none border-border/50 shadow-none bg-card/50 backdrop-blur-xl overflow-hidden rounded-lg">
         {/* Top Accent Gradient Line */}
         <div className="flex justify-center -mb-2">
-          {/* Base Logo */}
-          <Link href="/" className="block">
-            SafarSathi
-            <Logo />
+          <Link href="/" className="flex gap-1 justify-center items-center mt-4 mb-2">
+            <Plane className="h-8 w-8 text-primary" />
+            <h1 className="text-xl font-bold"><span className="text-primary ">Safar</span>Sathi</h1>
           </Link>
         </div>
         <CardHeader className="flex flex-col items-center text-center">
@@ -73,7 +70,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
 
         <CardContent className="py-6">
           {/* --- Demo Login Section --- */}
-          <div className="mb-8 space-y-3">
+          {/* <div className="mb-8 space-y-3">
             <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-muted-foreground/60 text-center">
               Quick Demo Access
             </p>
@@ -108,7 +105,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
               </span>
               <div className="h-px w-full bg-border/50"></div>
             </div>
-          </div>
+          </div> */}
 
           <form action={formAction} className="space-y-6">
             {/* Hidden Redirect Field */}

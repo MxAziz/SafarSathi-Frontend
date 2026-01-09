@@ -7,7 +7,6 @@ import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, } from "@/compon
 import { IUserInfo } from "@/types/user.interface";
 import { LayoutDashboard, Map, Plane, Users, ShieldCheck, Sparkles, Send, UserPlus, Star, } from "lucide-react";
 import Link from "next/link";
-// import { Logo } from "./shared/Logo";
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   authData: IUserInfo;
@@ -99,7 +98,6 @@ export function AppSidebar({ authData, ...props }: AppSidebarProps) {
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <Link href="/" className="flex gap-2 justify-start items-center transition-opacity hover:opacity-90">
-          {/* <Logo variant="full" /> */}
           <Plane />
           <h1 className="text-xl font-bold">SafarSathi</h1>
         </Link>
