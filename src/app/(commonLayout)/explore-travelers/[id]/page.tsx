@@ -5,12 +5,12 @@ import { TravelerProfileCard } from "@/components/modules/Explore-Travelers/Trav
 import { getTravelerById } from "@/services/traveler/traveler.service";
 import { Metadata } from "next";
 
-type Props = {
+
+type PageProps = {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps) {
   const { id } = await params;
   const { data: traveler } = await getTravelerById(id);
   if (!traveler) {
