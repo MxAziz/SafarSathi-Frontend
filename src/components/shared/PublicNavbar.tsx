@@ -30,8 +30,8 @@ const PublicNavbar = ({ accessToken, authData, }: { accessToken: string; authDat
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Explore", path: "/explore-travelers" },
-    { name: "Travel Buddy", path: "/travel-plans" },
+    { name: "Explore Travelers", path: "/explore-travelers" },
+    { name: "Travel Plans", path: "/travel-plans" },
     { name: "Memberships", path: "/membership" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
