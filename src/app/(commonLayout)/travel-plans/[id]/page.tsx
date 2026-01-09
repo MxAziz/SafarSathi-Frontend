@@ -373,11 +373,11 @@ function getDays(start: string, end: string) {
   return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
 
-export default async function TravelPlanDetailsPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
+
+export default async function TravelPlanDetailsPage({ params, }: PageProps,) {
   const { id } = await params;
   const { data: user } = await getUserInfo();
   const [plan, reviewsResult] = await Promise.all([
