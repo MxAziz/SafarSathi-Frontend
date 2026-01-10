@@ -77,7 +77,7 @@ export async function updateProfile(formData: FormData) {
     const result = await response.json();
 
     if (result.success) {
-      revalidateTag("USERS", { expire: 0 });
+      revalidateTag("USERS",);
     }
 
     return result;
@@ -104,7 +104,7 @@ export async function softDeleteUser(travelerId: string) {
     const result = await response.json();
 
     if (result.success) {
-      revalidateTag("USERS", { expire: 0 });
+      revalidateTag("USERS",);
     }
 
     return result;

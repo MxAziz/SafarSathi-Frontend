@@ -6,26 +6,26 @@ import Image from "next/image";
 import { EditProfileModal } from "@/components/modules/MyProfile/EditProfileModal";
 import BlurFade from "@/components/magicui/blur-fade";
 import { getUserInfo } from "@/services/auth/getUserInfo";
-import { Metadata } from "next";
+// import { Metadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { data: profile } = await getUserInfo();
-  if (!profile) {
-    return {
-      title: "My Profile | SafarSathi",
-      description: "Manage your SafarSathi profile and account settings.",
-    };
-  }
+// export async function generateMetadata(): Promise<Metadata> {
+//   const { data: profile } = await getUserInfo();
+//   if (!profile) {
+//     return {
+//       title: "My Profile | SafarSathi",
+//       description: "Manage your SafarSathi profile and account settings.",
+//     };
+//   }
 
-  return {
-    title: `${profile.name} - My Profile | SafarSathi Dashboard`,
-    description: `Welcome back, ${profile.name}. Manage your travel plans, update your profile, and check your membership status on SafarSathi.`,
-    robots: {
-      index: false,
-      follow: true,
-    },
-  };
-}
+//   return {
+//     title: `${profile.name} - My Profile | SafarSathi Dashboard`,
+//     description: `Welcome back, ${profile.name}. Manage your travel plans, update your profile, and check your membership status on SafarSathi.`,
+//     robots: {
+//       index: false,
+//       follow: true,
+//     },
+//   };
+// }
 
 export default async function ProfilePage() {
   const { data: profile } = await getUserInfo();

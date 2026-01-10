@@ -13,17 +13,31 @@ export const metadata: Metadata = {
   },
 };
 
-type SearchParams = {
-  searchParams: {
+// type SearchParams = {
+//   searchParams: {
+//     page?: string;
+//   };
+// };
+
+// const ManageReviewsPage = async ({ searchParams }: SearchParams) => {
+  // const params = await searchParams;
+
+// type PageProps = {
+//   searchParams?: {
+//     page?: string;
+//   };
+// };
+
+type PageProps = {
+  searchParams?: Promise<{
     page?: string;
-  };
+  }>;
 };
 
-const ManageReviewsPage = async ({ searchParams }: SearchParams) => {
-  // Await searchParams in Next.js 15+
+const ManageReviewsPage = async ({ searchParams }: PageProps) => {
   const params = await searchParams;
-
-  const page = Number(params?.page) || 1;
+  const page = Number(params?.page ?? 1);
+  // const page = Number(searchParams?.page ?? 1);
   const limit = 10;
 
   const queryParams = new URLSearchParams();

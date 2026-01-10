@@ -3,11 +3,13 @@ import { TravelerContactInfo } from "@/components/modules/Explore-Travelers/Trav
 import { TravelerDetails } from "@/components/modules/Explore-Travelers/Traveler-Details";
 import { TravelerProfileCard } from "@/components/modules/Explore-Travelers/Traveler-Profile-Card";
 import { getTravelerById } from "@/services/traveler/traveler.service";
-import { Metadata } from "next";
+
 
 
 type PageProps = {
-  params: Promise<{ id: string }>;
+  params: Promise<{
+    id: string;
+  }>;
 };
 
 export async function generateMetadata({ params }: PageProps) {
@@ -35,11 +37,7 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default async function TravelerPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function TravelerPage({ params, }: PageProps) {
   const { id } = await params;
   const { data: traveler } = await getTravelerById(id);
   return (

@@ -15,14 +15,20 @@ export const metadata: Metadata = {
   },
 };
 
-interface Props {
-  searchParams: {
+// interface Props {
+//   searchParams: {
+//     session_id?: string;
+//   };
+// }
+type PageProps = {
+  searchParams?: Promise<{
     session_id?: string;
-  };
-}
+  }>;
+};
 
-const PaymentSuccessPage = async ({ searchParams }: Props) => {
-  const { session_id } = await searchParams;
+const PaymentSuccessPage = async ({ searchParams }: PageProps) => {
+  const params = await searchParams;
+  const session_id = params?.session_id;
   if (!session_id) {
     redirect("/dashboard");
   }

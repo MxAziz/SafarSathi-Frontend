@@ -5,22 +5,22 @@ import UpcomingTripCard from "@/components/modules/Traveler/Dashboard/UpcomingTr
 import { Button } from "@/components/ui/button";
 import { getTravelerDashboardData } from "@/services/stats/stats.service";
 import { Sparkles } from "lucide-react";
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import Link from "next/link";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const { data } = await getTravelerDashboardData();
-  const firstName = data?.user?.name?.split(" ")[0] || "Traveler";
-  return {
-    title: `${firstName}'s Dashboard | Overview - SafarSathi`,
-    description:
-      "Track your travel stats, view upcoming trips, and manage your travel buddy connections effectively on SafarSathi.",
-    robots: {
-      index: false,
-      follow: true,
-    },
-  };
-}
+// export async function generateMetadata(): Promise<Metadata> {
+//   const { data } = await getTravelerDashboardData();
+//   const firstName = data?.user?.name?.split(" ")[0] || "Traveler";
+//   return {
+//     title: `${firstName}'s Dashboard | Overview - SafarSathi`,
+//     description:
+//       "Track your travel stats, view upcoming trips, and manage your travel buddy connections effectively on SafarSathi.",
+//     robots: {
+//       index: false,
+//       follow: true,
+//     },
+//   };
+// }
 
 const TravelerDashboardPage = async () => {
   const { data } = await getTravelerDashboardData();

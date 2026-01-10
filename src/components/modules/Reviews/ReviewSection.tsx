@@ -90,6 +90,7 @@ export const ReviewSection = ({
         toast.error(res.message || "Failed to delete");
       }
     } catch (error) {
+      console.log(error);
       toast.error("Something went wrong");
     } finally {
       setDeletingReviewId(null);
@@ -150,7 +151,7 @@ export const ReviewSection = ({
           </div>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-muted-foreground leading-relaxed break-words">
+          <p className="text-sm text-muted-foreground leading-relaxed wrap-break-words">
             {review.comment}
           </p>
         </CardContent>

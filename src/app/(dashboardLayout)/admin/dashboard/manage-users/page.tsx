@@ -9,17 +9,23 @@ export const metadata: Metadata = {
     "Administrator view for managing registered travelers. Search, filter, and update user accounts, verify profiles, and manage active users on SafarSathi.",
 };
 
-type SearchParams = {
-  searchParams: {
+// type SearchParams = {
+//   searchParams: {
+//     page?: string;
+//     searchTerm?: string;
+//   };
+// };
+type PageProps = {
+  searchParams?: Promise<{
     page?: string;
     searchTerm?: string;
-  };
+  }>;
 };
 
-const ManageUsersPage = async ({ searchParams }: SearchParams) => {
+const ManageUsersPage = async ({ searchParams }: PageProps) => {
   const params = await searchParams;
 
-  const page = Number(params?.page) || 1;
+  const page = Number(params?.page ?? 1) || 1;
   const limit = 10;
 
   // Construct Query String

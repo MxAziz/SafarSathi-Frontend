@@ -5,39 +5,43 @@ import { getSystemActivities } from "@/services/admin/activity.service";
 import { Activity } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils"; // Shadcn utility
-import { Metadata } from "next";
+// import { Metadata } from "next";
 
-type Props = {
-  searchParams: { [key: string]: string | string[] | undefined };
+
+type PageProps = {
+  params: Promise<{
+    id: string;
+  }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
 
-// ✅ Dynamic Metadata for Activity Logs
-export async function generateMetadata({
-  searchParams,
-}: Props): Promise<Metadata> {
-  const queryParams = await searchParams;
-  const type = (queryParams?.type as string) || "ALL";
+// // ✅ Dynamic Metadata for Activity Logs
+// export async function generateMetadata({
+//   searchParams,
+// }: Props): Promise<Metadata> {
+//   const queryParams = await searchParams;
+//   const type = (queryParams?.type as string) || "ALL";
 
-  const titleMap: Record<string, string> = {
-    ALL: "System Activity Log",
-    USER_REGISTER: "User Join Logs",
-    TRIP_CREATE: "Trip Creation Logs",
-    PAYMENT: "Financial Transactions",
-    REVIEW: "Review Activity",
-  };
+//   const titleMap: Record<string, string> = {
+//     ALL: "System Activity Log",
+//     USER_REGISTER: "User Join Logs",
+//     TRIP_CREATE: "Trip Creation Logs",
+//     PAYMENT: "Financial Transactions",
+//     REVIEW: "Review Activity",
+//   };
 
-  const pageTitle = titleMap[type] || "Activity Log";
+//   const pageTitle = titleMap[type] || "Activity Log";
 
-  return {
-    title: `${pageTitle} | Admin Dashboard - SafarSathi`,
-    description:
-      "Monitor real-time system events, financial transactions, and user activities across the SafarSathi platform.",
-    robots: {
-      index: false,
-      follow: false,
-    },
-  };
-}
+//   return {
+//     title: `${pageTitle} | Admin Dashboard - SafarSathi`,
+//     description:
+//       "Monitor real-time system events, financial transactions, and user activities across the SafarSathi platform.",
+//     robots: {
+//       index: false,
+//       follow: false,
+//     },
+//   };
+// }
 
 const filters = [
   { label: "All Events", value: "ALL" },
@@ -47,7 +51,7 @@ const filters = [
   { label: "Reviews", value: "REVIEW" },
 ];
 
-const ManageActivityPage = async ({ searchParams }: Props) => {
+const ManageActivityPage = async ({ searchParams }: PageProps) => {
   const queryParams = await searchParams;
 
   const page = typeof queryParams?.page === "string" ? queryParams.page : "1";
