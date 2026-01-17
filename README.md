@@ -7,6 +7,7 @@ A modern, responsive, and interactive frontend application for **Travel Buddy & 
 ## Live Link
 
 ```
+https://safar-sathi-frontend.vercel.app/
 
 ```
 
